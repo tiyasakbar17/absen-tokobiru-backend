@@ -1,7 +1,7 @@
 import { Config, JsonDB } from 'node-json-db';
 
 const db = new JsonDB(
-  new Config('src/shared/database/database', true, true, '/', true),
+  new Config('database', true, true, '/', true),
 );
 
 function generateUUID() {

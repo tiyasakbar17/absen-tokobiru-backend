@@ -1,4 +1,4 @@
-import { IGenerateTokenPayload } from 'src/auth/interface/jsonWebToken';
+import { IGenerateTokenPayload } from 'src/auth/shared/jsonWebToken';
 import * as jwt from 'jsonwebtoken';
 import { TokenValidationException } from 'src/shared/exceptions/TokenValidation.exception';
 

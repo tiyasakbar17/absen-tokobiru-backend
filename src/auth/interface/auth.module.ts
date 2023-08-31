@@ -1,9 +1,4 @@
-import {
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-  RequestMethod,
-} from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { RegistrationUseCase } from '../application/registration/registration.useCase';
 import { AuthRepositoryImp } from '../domain/repositories/auth.repository';
@@ -25,9 +20,6 @@ import { TokenValidationMiddleware } from 'src/shared/middlewares/tokenValidatio
 })
 export class AuthModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(TokenValidationMiddleware).forRoutes({
-      path: 'auth/login',
-      method: RequestMethod.POST,
-    });
+    consumer.apply(TokenValidationMiddleware).forRoutes();
   }
 }

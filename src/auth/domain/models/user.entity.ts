@@ -1,6 +1,6 @@
 import { IMonthlySummary } from 'src/auth/shared/MonthlySummary';
 
-export class Users {
+export interface Users {
   id: string;
   name: string;
   email: string;

@@ -11,15 +11,16 @@ import {
   LoginRequestDto,
   LoginResponseDto,
 } from '../application/login/login.dto';
+import { authRoutes } from '../constant/routes';
 
-@Controller('auth')
+@Controller()
 export class AuthController {
   constructor(
     private readonly registrationUseCase: RegistrationUseCase,
     private readonly loginUseCase: LoginUseCase,
   ) {}
 
-  @Post('register')
+  @Post(authRoutes.register.path)
   // @UseInterceptors(NoFilesInterceptor()) // Cara untuk handle form-data
   async registerUser(
     @Body() registrationDto: RegistrationRequestDto,
@@ -35,7 +36,7 @@ export class AuthController {
     );
   }
 
-  @Post('login')
+  @Post(authRoutes.login.path)
   async loginUser(
     @Body() loginDto: LoginRequestDto,
   ): Promise<ResponseDto<LoginResponseDto>> {

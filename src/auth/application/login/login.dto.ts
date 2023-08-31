@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsEmail, MinLength } from 'class-validator';
+import { IsNotEmpty, IsEmail } from 'class-validator';
 import { Users } from 'src/auth/domain/models/user.entity';
 
 export class LoginRequestDto {

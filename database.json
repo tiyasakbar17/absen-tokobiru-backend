@@ -1,0 +1,37 @@
+{
+    "absensi": {
+        "f6db1446-243f-4401-af19-6dca2615e3e5": {
+            "31.7.2023": {
+                "in": {
+                    "status": "On Time",
+                    "time": "8:20",
+                    "location": {
+                        "lon": -123.341231,
+                        "lat": 6.234242
+                    }
+                },
+                "out": {
+                    "status": "Overtime",
+                    "time": "23:20",
+                    "location": {
+                        "lon": 106.827153,
+                        "lat": -6.175392
+                    }
+                }
+            }
+        }
+    },
+    "users": {
+        "tiyas@ganteng.com": {
+            "id": "f6db1446-243f-4401-af19-6dca2615e3e5",
+            "name": "tiyas",
+            "email": "tiyas@ganteng.com",
+            "password": "$2b$10$pRK3zNY8cn9PkqZSReWJd.beCvVdrcy8YqftUvI4ojaX2GTXVgD8O",
+            "monthlySummary": {
+                "alfa": 0,
+                "attendance": 0,
+                "leave": 0
+            }
+        }
+    }
+}

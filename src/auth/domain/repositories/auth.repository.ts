@@ -1,13 +1,13 @@
 import { db, generateUUID } from 'src/shared/database/db';
 import { Users } from '../models/user.entity';
-import { NewUserParams } from 'src/auth/interface/createNewUser';
-import { RegistrationFailedException } from 'src/auth/exceptions/registrationFailed.exception';
+import { NewUserParams } from 'src/auth/shared/createNewUser';
+import { RegistrationFailedException } from 'src/auth/exception/registrationFailed.exception';
 import { ListObjectUser } from 'src/auth/shared/listObjectUser';
-import { AccountNotFoundFailedException } from 'src/auth/exceptions/accountNotFound.exception';
+import { AccountNotFoundFailedException } from 'src/auth/exception/accountNotFound.exception';
 
 interface AuthRepository {
-  findByKey: (key: string) => Promise<Users>;
-  create: (params: NewUserParams) => Promise<Users>;
+  findByKey(key: string): Promise<Users>;
+  create(params: NewUserParams): Promise<Users>;
 }
 
 export class AuthRepositoryImp implements AuthRepository {

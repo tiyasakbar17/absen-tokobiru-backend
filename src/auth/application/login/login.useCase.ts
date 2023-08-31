@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { AuthRepositoryImp } from 'src/auth/domain/repositories/auth.repository';
 import { LoginRequestDto, LoginResponseDto } from './login.dto';
 import * as bcrypt from 'bcrypt';
-import { LoginFailedException } from 'src/auth/exceptions/loginFailed.exception';
+import { LoginFailedException } from 'src/auth/exception/loginFailed.exception';
 import { JSONWebTokenUtils } from 'src/auth/infrastructure/external/jsonWebtoken';
 import { BcryptUtils } from 'src/auth/infrastructure/external/bcrypt';
 import { Users } from 'src/auth/domain/models/user.entity';

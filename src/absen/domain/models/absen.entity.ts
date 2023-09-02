@@ -12,10 +12,15 @@ export interface Absensi {
 }
 
 export interface TodayAbsen {
+  date: Date;
   in: Absensi;
   out: Absensi;
 }
 
 export interface UserAbsenObject {
   [key: string]: Absensi;
+}
+
+export interface TodayAbsenObj {
+  [key: string]: Partial<TodayAbsen>;
 }

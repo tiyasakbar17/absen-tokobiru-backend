@@ -5,6 +5,7 @@ import { protectedRoutes } from '../constant/routes';
 import { AbsenRepositoryImpl } from '../domain/repository/absen.repository';
 import { AbsenUseCase } from '../application/absen/absen.useCase';
 import { JSONWebTokenUtils } from 'src/auth/infrastructure/external/jsonWebtoken';
+import { HistoryUseCase } from '../application/history/history.useCase';
 
 @Module({
   controllers: [AbsenController],
@@ -12,6 +13,7 @@ import { JSONWebTokenUtils } from 'src/auth/infrastructure/external/jsonWebtoken
     TokenValidationMiddleware,
     AbsenRepositoryImpl,
     AbsenUseCase,
+    HistoryUseCase,
     JSONWebTokenUtils,
   ],
 })

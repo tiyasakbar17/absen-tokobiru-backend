@@ -36,7 +36,8 @@ export class AbsenUseCase {
   ): Promise<AbsenStatus> {
     // CheckLocation
     const distance = this.#checkDistance(absenRequestDto.location);
-    if (distance > 400) throw new DistanceTooFarException();
+    console.log(distance)
+    if (distance > 1000) throw new DistanceTooFarException();
 
     absenRequestDto.absenTime = new Date(absenRequestDto.absenTime);
     // get absen status

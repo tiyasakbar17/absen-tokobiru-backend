@@ -3,7 +3,7 @@
         "f6db1446-243f-4401-af19-6dca2615e3e5": {
             "31.7.2023": {
                 "in": {
-                    "status": "On Time",
+                    "status": "Late",
                     "time": "8:20",
                     "location": {
                         "lon": -123.341231,
@@ -16,6 +16,24 @@
                     "location": {
                         "lon": 106.827153,
                         "lat": -6.175392
+                    }
+                }
+            },
+            "2.8.2023": {
+                "in": {
+                    "status": "Late",
+                    "time": "19:27",
+                    "location": {
+                        "lon": 106.8313463,
+                        "lat": -6.1847529
+                    }
+                },
+                "out": {
+                    "status": "Overtime",
+                    "time": "19:28",
+                    "location": {
+                        "lon": 106.8313463,
+                        "lat": -6.1847529
                     }
                 }
             }

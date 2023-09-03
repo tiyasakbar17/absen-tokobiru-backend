@@ -36,7 +36,6 @@ export class AbsenUseCase {
   ): Promise<AbsenStatus> {
     // CheckLocation
     const distance = this.#checkDistance(absenRequestDto.location);
-    console.log(distance)
     if (distance > 1000) throw new DistanceTooFarException();
 
     absenRequestDto.absenTime = new Date(absenRequestDto.absenTime);
@@ -56,8 +55,7 @@ export class AbsenUseCase {
       today.setHours(17);
       absenTime = AbsenTime.OUT;
     }
-    const overtime = new Date(today.getMilliseconds() + 1 * 60 * 60 * 1000);
-
+    const overtime = new Date(today.getTime() + 1 * 60 * 60 * 1000);
     const absenMinutes = absenRequestDto.absenTime.getMinutes();
     const time: string = `${absenRequestDto.absenTime.getHours()}:${
       absenMinutes > 9 ? absenMinutes : '0' + absenMinutes

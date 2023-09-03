@@ -6,7 +6,7 @@ import {
 } from '../models/absen.entity';
 import { AbsenTime } from 'src/absen/constant/enums';
 
-interface AbsenRepository {
+export interface AbsenRepository {
   checkDataByKey(key: string): Promise<boolean>;
   create(
     id: string,

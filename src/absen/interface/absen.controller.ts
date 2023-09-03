@@ -5,7 +5,6 @@ import {
 } from '../application/absen/absen.dto';
 import { CustomExpressRequest } from 'src/shared/interfaces/customExpressRequest';
 import { absenRoutes } from '../constant/routes';
-import { AbsenStatus } from '../constant/enums';
 import { AbsenUseCase } from '../application/absen/absen.useCase';
 import { HistoryUseCase } from '../application/history/history.useCase';
 import { ResponseDtoUtils } from 'src/shared/utis/response.utils';
@@ -22,7 +21,7 @@ export class AbsenController {
   async absen(
     @Req() req: CustomExpressRequest,
     @Body() absenRequestDto: AbsenRequestDto,
-  ) {
+  ): Promise<ResponseDtoUtils> {
     const status = await this.absenUseCase.execute(
       req.tokenPayload.id,
       absenRequestDto,
@@ -33,7 +32,7 @@ export class AbsenController {
   }
 
   @Get(absenRoutes.history.path)
-  async history(@Req() req: CustomExpressRequest) {
+  async history(@Req() req: CustomExpressRequest): Promise<ResponseDtoUtils> {
     const data = await this.historyUseCase.execute(req.tokenPayload.id);
     return ResponseDtoUtils.success<HistoryResponseDto>(
       'Data successfully fetched',
